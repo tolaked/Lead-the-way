@@ -1,0 +1,41 @@
+/* SurveyTable.css */
+.survey-table {
+  width: 100%;
+  margin: 20px auto;
+  overflow-x: auto;
+}
+
+.survey-table table {
+  width: 100%;
+  border-collapse: collapse; /* Ensures there are no gaps between cells */
+  font-size: 16px;
+  font-family: 'Arial', sans-serif;
+  border: 1px solid #ccc;
+}
+
+.survey-table th, 
+.survey-table td {
+  padding: 10px;
+  border: 1px solid #ccc; /* Creates shared borders between cells */
+  text-align: left;
+}
+
+.survey-table th {
+  background-color: #f4f4f4;
+  /* font-weight: bold; */
+  font-size: 14px
+}
+
+.survey-table tr:nth-child(even) {
+  background-color: #f9f9f9; /* Adds striped rows */
+}
+
+.survey-table tr:hover {
+  background-color: #f1f1f1; /* Adds hover effect for better readability */
+}
+
+.survey-table th, 
+.survey-table td {
+  max-width: 200px;
+  word-wrap: break-word; /* Ensures long content breaks into new lines */
+}

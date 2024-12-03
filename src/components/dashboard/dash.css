@@ -1,0 +1,164 @@
+.submit-btn-container{
+  position: fixed;
+  top: 0; /* Distance from the top */
+ /* Button color */
+ width: 100%;
+ background: white;
+ display: flex;
+ justify-content: center;
+ padding-bottom: 10px;
+  z-index: 999; /* Ensure it's above other elements */
+}
+.submit-btn-container button{
+  transform: translateX(-50%); /* Adjust to ensure button is centered */
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.submit-btn:hover {
+  background-color: #0056b3; /* Darker color on hover */
+}
+
+
+
+.dashboard-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+    gap: 15px;
+    padding: 20px;
+    margin-top: 30px; /* Push content down to avoid overlap with fixed submit button */
+  /* padding: 20px; */
+  }
+  
+  .category {
+    display: grid;
+    grid-template-rows: auto 1fr;
+  }
+  
+  .category h2 {
+    background-color: #0056b3;
+    color: white;
+    padding: 10px;
+    margin: 0;
+    text-align: center;
+    border-radius: 8px 8px 0 0;
+    font-size: 18px;
+  }
+  
+  .questions-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+    background-color: #f0f0f0;
+    padding: 10px;
+    border-radius: 0 0 8px 8px;
+  }
+  
+  .question-card {
+    position: relative;
+    padding:  5px;
+    background-color: #f9f9f9;
+    border: 2px solid #ddd;
+    border-radius: 8px;
+    overflow: hidden;
+    transition: border-color 0.3s ease-in-out;
+    cursor: pointer;
+    min-height: 70px;
+  }
+  
+  .question-card.answered-yes {
+    border-color: green;
+    animation: border-glow 1.5s infinite;
+  }
+  .question-card.answered-no{
+    border-color: #ff4d4d;
+    /* animation: border-glow 1.5s infinite; */
+  }
+  .question-card.pending{
+    border-color: #FFA500 ;
+  }
+  .question-card button:disabled {
+    /* background-color: #d3d3d3; */
+    border: 1px solid #cccccc;   /* Gray border */
+    cursor: not-allowed;         /* Not-allowed cursor */
+    opacity: 0.6;                /* Slight transparency */
+  }
+  
+  
+  @keyframes border-glow {
+    0% {
+      box-shadow: 0 0 4px green;
+    }
+    50% {
+      box-shadow: 0 0 6px green;
+    }
+    100% {
+      box-shadow: 0 0 4px green;
+    }
+  }
+  
+  .question {
+  background-color: white;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 10px;
+    text-align: center;
+    font-size: 14px;
+    color: #333;
+    min-height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .buttons {
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  button {
+    padding: 5px 10px;
+    font-size: 12px;
+    cursor: pointer;
+    border: none;
+    border-radius: 5px;
+    background-color: #007bff;
+    color: white;
+    transition: background-color 0.3s;
+  }
+  
+  button:hover {
+    background-color: #0056b3;
+  }
+  
+  /* Remove the old hover-popup styles */
+
+/* Use this with react-tooltip library */
+/* .question-card:hover {
+    position: relative;
+    z-index: 10;
+  } */
+  
+  /* .hover-popup {
+    display: none;
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: rgba(0, 0, 0, 0.8);
+    color: white;
+    padding: 10px;
+    border-radius: 5px;
+    white-space: normal;
+    width: 150px;
+  }
+  
+  .question-card:hover .hover-popup {
+    display: block;
+  } */
+  

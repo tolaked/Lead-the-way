@@ -1,0 +1,28 @@
+version: 0.2
+
+phases:
+  pre_build:
+    commands:
+      - echo Entering build phase...
+      - echo Downloading Dockerfile
+      - aws s3 cp s3://aw-codebuild-739672810541/LeadTheWayDockerfiles/Dockerfile-lead-the-way-frontend-nonprod Dockerfile
+      - echo Logging in to Amazon ECR...
+      - aws --version
+      - aws ecr get-login-password --region $AWS_DEFAULT_REGION | docker login --username AWS --password-stdin 739672810541.dkr.ecr.eu-west-1.amazonaws.com
+      - COMMIT_HASH=$(echo $CODEBUILD_RESOLVED_SOURCE_VERSION | cut -c 1-7)
+      - IMAGE_TAG=${COMMIT_HASH:=latest}
+  build:
+    commands:
+      - echo Build started on `date`
+      - echo Building the Docker image...
+      - docker build -t lead_the_way_frontend .
+      - docker tag lead_the_way_frontend:latest 739672810541.dkr.ecr.eu-west-1.amazonaws.com/lead_the_way_frontend:latest
+  post_build:
+    commands:
+      - echo Build completed on `date`
+      - echo Pushing the Docker images...
+      - docker push 739672810541.dkr.ecr.eu-west-1.amazonaws.com/lead_the_way_frontend:latest
+      - echo Writing image definitions file...
+      - printf '[{"name":"lead-the-way-frontend","imageUri":"%s"}]' $REPOSITORY_URI:latest > imagedefinitions.json
+artifacts:
+  files: imagedefinitions.json

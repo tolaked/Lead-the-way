@@ -1,0 +1,66 @@
+/* Grid container to hold categories */
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 3 categories side by side */
+    gap: 20px; /* Gap between categories */
+    padding: 20px;
+    justify-items: stretch;
+  }
+  .submit{
+    display: flex;
+    justify-content: center;
+  }
+  .submit button{
+    padding: 10px 20px;
+    font-size: 16px;
+  }
+  /* Styling for each category */
+  .category {
+    background-color: #f8f9fa;
+    border: 2px solid #d1d1d1;
+    padding: 15px;
+    border-radius: 8px;
+  }
+  
+  /* Title styling for categories */
+  .category h2 {
+    background-color: #0056b3;
+    color: white;
+    padding: 10px;
+    margin: 0;
+    text-align: center;
+    border-radius: 8px 8px 0 0;
+    font-size: 18px;
+  }
+  
+  /* Questions grid inside each category */
+  .questions-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 3 questions per row */
+    gap: 10px; /* Gap between questions */
+  }
+  
+  /* Styling for individual questions */
+  .question {
+    background-color: white;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 10px;
+    text-align: center;
+    font-size: 14px;
+    color: #333;
+    min-height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+  }
+  
+  .question.answered-yes {
+    border-color: green;
+    animation: border-glow 1.5s infinite;
+  }
+  .question.answered-no{
+    border-color: #ff4d4d;
+    /* animation: border-glow 1.5s infinite; */
+  }
