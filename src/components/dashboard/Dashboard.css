@@ -13,6 +13,12 @@
   .submit button{
     padding: 10px 20px;
     font-size: 16px;
+    cursor: pointer;
+    border: none;
+    border-radius: 5px;
+    background-color: #007bff;
+    color: white;
+    transition: background-color 0.3s;
   }
   /* Styling for each category */
   .category {
@@ -36,8 +42,11 @@
   /* Questions grid inside each category */
   .questions-grid {
     display: grid;
-    grid-template-columns: repeat(3, 1fr); /* 3 questions per row */
-    gap: 10px; /* Gap between questions */
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+    background-color: #f0f0f0;
+    padding: 10px;
+    border-radius: 0 0 8px 8px;
   }
   
   /* Styling for individual questions */

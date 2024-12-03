@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const BASE_URL = 'http://localhost:7070/api/v1/surveys'
+const BASE_URL = 'https://lead-the-way-backend.onrender.com/api/v1/surveys'
 export const getUserSurvey = (userId)=>{
     return axios.get(`${BASE_URL}?userId=${userId}`)
 }
