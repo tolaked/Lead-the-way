@@ -9,14 +9,7 @@ const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <>
   
-    {/* <MsalProvider instance={msalInstance}>
-        <MsalAuthenticationTemplate interactionType={InteractionType.Popup}>
-          <App />
-        </MsalAuthenticationTemplate>
-        <UnauthenticatedTemplate>
-          <Error403 />
-        </UnauthenticatedTemplate>
-  </MsalProvider> */}
+   
    <App />
   ,
   </>
